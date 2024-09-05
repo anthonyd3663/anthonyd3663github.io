@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baller Website</title>
 </head>
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
 <body>
     <h1>Welcome!</h1>
-    <p>
+    <p class = "p1English">
         My name is Anthony Detweiler! I am a Electrical Engineer
         <br>with a particular interest in <em>web development</em>. My pronouns
         <br>are He/Him. My goals for this course, honestly, is to
         <br>integrate the use of an Arduino with a webiste. I think 
         <br>it would be so cool if I could pull this off.
+    </p>
+    <p class = "p1Spanish">
+        Mi nombre es Anthony Detweiler! Yo so un ingeniero electrico
+        <br>con un interes particular en <em>desrrollo web</em>. Mis pronoumbres
+        <br>son el. Mi meta para esta classe, honestamente, es
+        <br>integrar el uso de Arduino con un website. Yo creo
+        <br>que seria bien chevere si es que yo lo podria lograr esto.
     </p>
     <img src="\img\Iyanla.jpg" alt = "Sketch of my face made by a close friend of mine" style="width:320px">
     <p><!--A random enter to make the website look better--></p>
@@ -23,6 +37,38 @@
         my url?-->
     <p></p>
     <a href="https://www.youtube.com/watch?v=sdUUx5FdySs">My favorite youtube video!</a>
+    <div>
+        <p class="name">Yo, whats good</p>
+        <button onclick="changeColor()">Change to Blue</button>
+    </div>
+    <div>
+        <br>
+        <button onclick="spanish()">Español?</button>
+    </div>
+    <div>
+        <br>
+        <button onclick="english()">English?</button>
+    </div>
 </body>
+      <script>
+        const name = document.querySelector(".name");
+        const p1English = document.querySelector(".p1English");
+        const p1Spanish = document.querySelector(".p1Spanish");
+
+        //p1English.classList.toggle('hidden');
+        p1Spanish.classList.toggle('hidden');
+
+        function english() {
+        p1English.classList.toggle('hidden');
+        p1Spanish.classList.toggle('hidden');
+        }
+        function spanish() {
+        p1English.classList.toggle('hidden');
+        p1Spanish.classList.toggle('hidden');            
+        }
+        function changeColor() {
+            name.style.color = "blue";
+        }
+      </script>
 </html>
 
