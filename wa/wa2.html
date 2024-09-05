@@ -55,16 +55,16 @@
         const p1English = document.querySelector(".p1English");
         const p1Spanish = document.querySelector(".p1Spanish");
 
-        //p1English.classList.toggle('hidden');
-        p1Spanish.classList.toggle('hidden');
+        p1English.classList = '';
+        p1Spanish.classList = 'hidden';
 
         function english() {
-        p1English.classList.toggle('hidden');
-        p1Spanish.classList.toggle('hidden');
+            p1English.classList = '';
+            p1Spanish.classList = 'hidden';
         }
         function spanish() {
-        p1English.classList.toggle('hidden');
-        p1Spanish.classList.toggle('hidden');            
+            p1English.classList = 'hidden';
+            p1Spanish.classList = '';
         }
         function changeColor() {
             name.style.color = "blue";
