@@ -1,7 +1,29 @@
-<html>
-    <head></head>
-    <body>
-        <p>Hello World!</p>
-        <p>My name is Anthony</p> <!-- Change NAME to your name!-->
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send data to GAS</title></title>
+  <!-- Include your script here -->
+  <script>
+      async function sendDataToGAS() {
+          const response = await fetch('https://script.google.com/macros/s/AKfycby2z7RX2KPEKuw3vCQiYwyEIChchDGOJwQzKjyoaAmQIz65v0trt4UPQqbro2OXU5W4jQ/exec', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({temperature: 25, humidity: 60}),
+          });
+
+          const result = await response.text();
+          console.log(result);
+      }
+  </script>
+</head>
+    
+<body>
+    <p>Hello World!</p>
+    <p>My name is Anthony</p> <!-- Change NAME to your name!-->
+    <button onclick="sendDataToGAS()">Send Data to Google Apps Script</button>
+</body>
 </html>
