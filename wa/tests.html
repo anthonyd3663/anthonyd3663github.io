@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POST to Google Apps Script</title>
+  <style>
+
+  </style>
+  
+  <script>
+    async function postData() {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbx9FONNeEpFxJfLMQgVeSCEDaELQMPNcNzG58ALU-NvWYnTpezFSzsAKNnVGxdKHW9YQQ/exec';
+      const payload = {
+        message: 'Hello from GitHub!'
+      };
+
+      try {
+        const response = await fetch(scriptURL, {
+          mode: 'no-cors',
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const text = await response.text();
+        console.log(text);  // Log the response from the Apps Script
+        document.getElementById('output').innerText = text;
+      } catch (error) {
+        console.error('Error posting data:', error);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>POST Data to Google Apps Script</h1>
+  <button onclick="postData()">Send Data to Google Apps Script</button>
+  <p id="output"></p>
+
+  <p>This is some text, the following is the message:</p>
+  <p id="p"></p>
+</body>
+</html>
