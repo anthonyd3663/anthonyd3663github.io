@@ -17,7 +17,7 @@
 
       try {
         const response = await fetch(scriptURL, {
-          mode: 'no-cors',
+          //mode: 'no-cors',
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -27,9 +27,32 @@
 
         const text = await response.text();
         console.log(text);  // Log the response from the Apps Script
+        console.log("Response:");
+        console.log(response);
+        console.log("Eh?");
+        console.log();
         document.getElementById('output').innerText = text;
       } catch (error) {
         console.error('Error posting data:', error);
+      }
+    }
+  </script>
+
+  <script>
+    async function sendData() {
+      const url = 'https://script.google.com/macros/s/AKfycbx9FONNeEpFxJfLMQgVeSCEDaELQMPNcNzG58ALU-NvWYnTpezFSzsAKNnVGxdKHW9YQQ/exec';
+      const params = new URLSearchParams({
+        name: 'John Doe',
+        age: 25
+      });
+
+      try {
+        const response = await fetch(`${url}?${params.toString()}`);
+        const result = await response.text();
+        console.log(result); // Log the response from the Apps Script
+        document.getElementById('output').innerText = result;
+      } catch (error) {
+        console.error('Error:', error);
       }
     }
   </script>
@@ -37,6 +60,7 @@
 <body>
   <h1>POST Data to Google Apps Script</h1>
   <button onclick="postData()">Send Data to Google Apps Script</button>
+  <button onclick="sendData()">Send GET Request</button>
   <p id="output"></p>
 
   <p>This is some text, the following is the message:</p>
