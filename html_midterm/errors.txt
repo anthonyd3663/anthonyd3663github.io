@@ -1,0 +1,52 @@
+Anthony Detweiler
+
+find_errors.html (25 errors)
+1. line 1 - Missing Doctype html
+1.1 line 6 - head is missing charset and name and content
+2. line 2 - Missing html lang="en" and ALSO has this but misspelled later
+3. line 6 - html language should not have been in the head
+4. line 9 - missing h1 closing tag
+5. line 11 - missing paragraph open tag
+6. line 24 - open tag is an ordered list so closed tag should be an ordered list.
+7. line 26 - Missing a close p tag
+8. line 28 - missing alt text
+9. line 28 - it should be Image.jpg
+10. line 45 - table tag needs to be closed
+11. line 57 - comment is not closed
+12. line 52 - missing p tag
+13. line 52 - missing strikethrough tag
+14. line 32 - a tag is not closed
+15. line 32 - has an img tag for no reason
+16. line 41 - missing / in closing tag for table
+17. line 59 - missing a close tag
+18. line 64 - wrong tag, should be a dt
+19. line 65 - wrong tag, should be a dd
+20. line 67 - you can't open with an h2 and close with and h3
+21. line 49 - its jpg, not jpeg
+22. line 49 - source should be script
+23. line 49 - the file path is wrong and has been updated
+24. line 61 - the em tags should be within the p tags
+25. line 61 - the tags are also wrong, it should be <u> tag as opposed to em tag
+26. line 21 - the tag is opened with a close tag, its been updated to open with an open tag
+
+find_errors_2.html (15 errors)
+
+1. line 4 - You can't put a header in a head tag
+2. line 5 - missing head end tag
+3. line 6 - missing > for body tag
+4. line 18 - while I'm at it, missing close tag for body
+5. line 8 - html should be on the outside of all the code
+6. line 20 - while I'm at it, html close tag is misspelled
+7. line 3 - missing <html lang = "en">
+8. line 7 - missing meta tags
+9. line 20 - missing h2 open tag
+10. line 22 - missing p open tag
+11. line 23 - this is not a comment
+12. line 16 - p tag is not closed
+13. line 16 - strong tag is not closed
+14. line 15 - div tag is not closed
+15. line 18 - img should not be href, it should be src
+16. line 18 - missing alt text
+17. line 18 - the image is not referenced correctly
+
+find_errors.html (15 errors)
