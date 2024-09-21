@@ -1,0 +1,68 @@
+<!-- Google Spreadsheet used: -->
+<!-- https://docs.google.com/spreadsheets/d/1NMrST3h3yFpTofFaFX1R8Ry4b7yWipXxHHzi4cSarjE/edit?usp=sharing -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Site</title>
+
+    <style>
+        .default {
+            width: 300px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Color Changing Site</h1>
+
+    <div class="default" id="div1">
+        <p>How are you?</p>
+    </div>
+
+    <button onclick="getData()">Send GET Request</button>
+
+    <h2>Current date and time:</h2>
+    <span id="datetime"></span>
+    <script>
+        function updateDateTime(){
+            const now = new Date();
+
+            const currentDateTime = now.toLocaleDateString();
+
+            document.querySelector('#datetime').textContent = currentDateTime;
+        }
+        
+        setInterval(updateDateTime, 1000);
+    </script>
+    <script> //Color stuff!
+        getData();
+        // Function to read GAS color
+        async function getData() {
+            const url = 'https://script.google.com/macros/s/AKfycbz-XRhysZtmeo6oduQBOng7C-lROzGgaFjrtrWOMTFbOyv_ORnMYQUtmwAbQGOW_cfk/exec';
+
+            try {
+                const response = await fetch(url);
+                const result = await response.text();
+
+                // Color theory:
+                const sample = document.getElementById('div1');
+                const color = result;
+                const style1 = "15px solid " + color;
+                sample.style.border = style1;
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        setInterval(getData,1000);
+    </script>
+</body>
+
+</html>
