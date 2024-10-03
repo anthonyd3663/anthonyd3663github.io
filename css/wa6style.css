@@ -1,0 +1,36 @@
+#image1 {
+    display: block;
+    width: 600px; 
+    height: 370px;
+    object-fit: cover;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-95%,-20%);
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.overlay-image {
+    position: absolute;
+    top:250px;
+    right: 20px;
+}
+
+/* article {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+} */
